@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  redmine:
+    image: redmine:latest
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      REDMINE_DB_MYSQL: redmine-db
+      REDMINE_DB_PASSWORD: mypassword       # Đổi thành mật khẩu mạnh của bạn
+      REDMINE_SECRET_KEY_BASE: supersecretkey   # Đổi thành chuỗi bí mật bất kỳ
+    depends_on:
+      - redmine-db
+    volumes:
+      - ./files:/usr/src/redmine/files
+
+  redmine-db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mypassword       # Đổi giống REDMINE_DB_PASSWORD
+      MYSQL_DATABASE: redmine
+      MYSQL_USER: redmine
+      MYSQL_PASSWORD: mypassword           # Đổi giống REDMINE_DB_PASSWORD
+      MYSQL_CHARSET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_unicode_ci
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./mysql:/var/lib/mysql

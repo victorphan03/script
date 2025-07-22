@@ -1,0 +1,483 @@
+version: '3.8'
+
+services:
+  # 20 site WordPress, mỗi site một cặp wordpress + mysql riêng biệt
+  wordpress1:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      WORDPRESS_DB_HOST: db1
+      WORDPRESS_DB_USER: wpuser1
+      WORDPRESS_DB_PASSWORD: pass1
+      WORDPRESS_DB_NAME: wpdb1
+    volumes:
+      - ./wp-data1:/var/www/html
+
+  db1:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb1
+      MYSQL_USER: wpuser1
+      MYSQL_PASSWORD: pass1
+      MYSQL_ROOT_PASSWORD: rootpass1
+    volumes:
+      - ./db-data1:/var/lib/mysql
+
+  wordpress2:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8082:80"
+    environment:
+      WORDPRESS_DB_HOST: db2
+      WORDPRESS_DB_USER: wpuser2
+      WORDPRESS_DB_PASSWORD: pass2
+      WORDPRESS_DB_NAME: wpdb2
+    volumes:
+      - ./wp-data2:/var/www/html
+
+  db2:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb2
+      MYSQL_USER: wpuser2
+      MYSQL_PASSWORD: pass2
+      MYSQL_ROOT_PASSWORD: rootpass2
+    volumes:
+      - ./db-data2:/var/lib/mysql
+
+  wordpress3:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8083:80"
+    environment:
+      WORDPRESS_DB_HOST: db3
+      WORDPRESS_DB_USER: wpuser3
+      WORDPRESS_DB_PASSWORD: pass3
+      WORDPRESS_DB_NAME: wpdb3
+    volumes:
+      - ./wp-data3:/var/www/html
+
+  db3:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb3
+      MYSQL_USER: wpuser3
+      MYSQL_PASSWORD: pass3
+      MYSQL_ROOT_PASSWORD: rootpass3
+    volumes:
+      - ./db-data3:/var/lib/mysql
+
+  wordpress4:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8084:80"
+    environment:
+      WORDPRESS_DB_HOST: db4
+      WORDPRESS_DB_USER: wpuser4
+      WORDPRESS_DB_PASSWORD: pass4
+      WORDPRESS_DB_NAME: wpdb4
+    volumes:
+      - ./wp-data4:/var/www/html
+
+  db4:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb4
+      MYSQL_USER: wpuser4
+      MYSQL_PASSWORD: pass4
+      MYSQL_ROOT_PASSWORD: rootpass4
+    volumes:
+      - ./db-data4:/var/lib/mysql
+
+  wordpress5:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8085:80"
+    environment:
+      WORDPRESS_DB_HOST: db5
+      WORDPRESS_DB_USER: wpuser5
+      WORDPRESS_DB_PASSWORD: pass5
+      WORDPRESS_DB_NAME: wpdb5
+    volumes:
+      - ./wp-data5:/var/www/html
+
+  db5:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb5
+      MYSQL_USER: wpuser5
+      MYSQL_PASSWORD: pass5
+      MYSQL_ROOT_PASSWORD: rootpass5
+    volumes:
+      - ./db-data5:/var/lib/mysql
+
+  wordpress6:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8086:80"
+    environment:
+      WORDPRESS_DB_HOST: db6
+      WORDPRESS_DB_USER: wpuser6
+      WORDPRESS_DB_PASSWORD: pass6
+      WORDPRESS_DB_NAME: wpdb6
+    volumes:
+      - ./wp-data6:/var/www/html
+
+  db6:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb6
+      MYSQL_USER: wpuser6
+      MYSQL_PASSWORD: pass6
+      MYSQL_ROOT_PASSWORD: rootpass6
+    volumes:
+      - ./db-data6:/var/lib/mysql
+
+  wordpress7:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8087:80"
+    environment:
+      WORDPRESS_DB_HOST: db7
+      WORDPRESS_DB_USER: wpuser7
+      WORDPRESS_DB_PASSWORD: pass7
+      WORDPRESS_DB_NAME: wpdb7
+    volumes:
+      - ./wp-data7:/var/www/html
+
+  db7:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb7
+      MYSQL_USER: wpuser7
+      MYSQL_PASSWORD: pass7
+      MYSQL_ROOT_PASSWORD: rootpass7
+    volumes:
+      - ./db-data7:/var/lib/mysql
+
+  wordpress8:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8088:80"
+    environment:
+      WORDPRESS_DB_HOST: db8
+      WORDPRESS_DB_USER: wpuser8
+      WORDPRESS_DB_PASSWORD: pass8
+      WORDPRESS_DB_NAME: wpdb8
+    volumes:
+      - ./wp-data8:/var/www/html
+
+  db8:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb8
+      MYSQL_USER: wpuser8
+      MYSQL_PASSWORD: pass8
+      MYSQL_ROOT_PASSWORD: rootpass8
+    volumes:
+      - ./db-data8:/var/lib/mysql
+
+  wordpress9:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8089:80"
+    environment:
+      WORDPRESS_DB_HOST: db9
+      WORDPRESS_DB_USER: wpuser9
+      WORDPRESS_DB_PASSWORD: pass9
+      WORDPRESS_DB_NAME: wpdb9
+    volumes:
+      - ./wp-data9:/var/www/html
+
+  db9:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb9
+      MYSQL_USER: wpuser9
+      MYSQL_PASSWORD: pass9
+      MYSQL_ROOT_PASSWORD: rootpass9
+    volumes:
+      - ./db-data9:/var/lib/mysql
+
+  wordpress10:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8090:80"
+    environment:
+      WORDPRESS_DB_HOST: db10
+      WORDPRESS_DB_USER: wpuser10
+      WORDPRESS_DB_PASSWORD: pass10
+      WORDPRESS_DB_NAME: wpdb10
+    volumes:
+      - ./wp-data10:/var/www/html
+
+  db10:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb10
+      MYSQL_USER: wpuser10
+      MYSQL_PASSWORD: pass10
+      MYSQL_ROOT_PASSWORD: rootpass10
+    volumes:
+      - ./db-data10:/var/lib/mysql
+
+  wordpress11:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8091:80"
+    environment:
+      WORDPRESS_DB_HOST: db11
+      WORDPRESS_DB_USER: wpuser11
+      WORDPRESS_DB_PASSWORD: pass11
+      WORDPRESS_DB_NAME: wpdb11
+    volumes:
+      - ./wp-data11:/var/www/html
+
+  db11:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb11
+      MYSQL_USER: wpuser11
+      MYSQL_PASSWORD: pass11
+      MYSQL_ROOT_PASSWORD: rootpass11
+    volumes:
+      - ./db-data11:/var/lib/mysql
+
+  wordpress12:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8092:80"
+    environment:
+      WORDPRESS_DB_HOST: db12
+      WORDPRESS_DB_USER: wpuser12
+      WORDPRESS_DB_PASSWORD: pass12
+      WORDPRESS_DB_NAME: wpdb12
+    volumes:
+      - ./wp-data12:/var/www/html
+
+  db12:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb12
+      MYSQL_USER: wpuser12
+      MYSQL_PASSWORD: pass12
+      MYSQL_ROOT_PASSWORD: rootpass12
+    volumes:
+      - ./db-data12:/var/lib/mysql
+
+  wordpress13:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8093:80"
+    environment:
+      WORDPRESS_DB_HOST: db13
+      WORDPRESS_DB_USER: wpuser13
+      WORDPRESS_DB_PASSWORD: pass13
+      WORDPRESS_DB_NAME: wpdb13
+    volumes:
+      - ./wp-data13:/var/www/html
+
+  db13:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb13
+      MYSQL_USER: wpuser13
+      MYSQL_PASSWORD: pass13
+      MYSQL_ROOT_PASSWORD: rootpass13
+    volumes:
+      - ./db-data13:/var/lib/mysql
+
+  wordpress14:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8094:80"
+    environment:
+      WORDPRESS_DB_HOST: db14
+      WORDPRESS_DB_USER: wpuser14
+      WORDPRESS_DB_PASSWORD: pass14
+      WORDPRESS_DB_NAME: wpdb14
+    volumes:
+      - ./wp-data14:/var/www/html
+
+  db14:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb14
+      MYSQL_USER: wpuser14
+      MYSQL_PASSWORD: pass14
+      MYSQL_ROOT_PASSWORD: rootpass14
+    volumes:
+      - ./db-data14:/var/lib/mysql
+
+  wordpress15:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8095:80"
+    environment:
+      WORDPRESS_DB_HOST: db15
+      WORDPRESS_DB_USER: wpuser15
+      WORDPRESS_DB_PASSWORD: pass15
+      WORDPRESS_DB_NAME: wpdb15
+    volumes:
+      - ./wp-data15:/var/www/html
+
+  db15:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb15
+      MYSQL_USER: wpuser15
+      MYSQL_PASSWORD: pass15
+      MYSQL_ROOT_PASSWORD: rootpass15
+    volumes:
+      - ./db-data15:/var/lib/mysql
+
+  wordpress16:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8096:80"
+    environment:
+      WORDPRESS_DB_HOST: db16
+      WORDPRESS_DB_USER: wpuser16
+      WORDPRESS_DB_PASSWORD: pass16
+      WORDPRESS_DB_NAME: wpdb16
+    volumes:
+      - ./wp-data16:/var/www/html
+
+  db16:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb16
+      MYSQL_USER: wpuser16
+      MYSQL_PASSWORD: pass16
+      MYSQL_ROOT_PASSWORD: rootpass16
+    volumes:
+      - ./db-data16:/var/lib/mysql
+
+  wordpress17:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8097:80"
+    environment:
+      WORDPRESS_DB_HOST: db17
+      WORDPRESS_DB_USER: wpuser17
+      WORDPRESS_DB_PASSWORD: pass17
+      WORDPRESS_DB_NAME: wpdb17
+    volumes:
+      - ./wp-data17:/var/www/html
+
+  db17:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb17
+      MYSQL_USER: wpuser17
+      MYSQL_PASSWORD: pass17
+      MYSQL_ROOT_PASSWORD: rootpass17
+    volumes:
+      - ./db-data17:/var/lib/mysql
+
+  wordpress18:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8098:80"
+    environment:
+      WORDPRESS_DB_HOST: db18
+      WORDPRESS_DB_USER: wpuser18
+      WORDPRESS_DB_PASSWORD: pass18
+      WORDPRESS_DB_NAME: wpdb18
+    volumes:
+      - ./wp-data18:/var/www/html
+
+  db18:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb18
+      MYSQL_USER: wpuser18
+      MYSQL_PASSWORD: pass18
+      MYSQL_ROOT_PASSWORD: rootpass18
+    volumes:
+      - ./db-data18:/var/lib/mysql
+
+  wordpress19:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8099:80"
+    environment:
+      WORDPRESS_DB_HOST: db19
+      WORDPRESS_DB_USER: wpuser19
+      WORDPRESS_DB_PASSWORD: pass19
+      WORDPRESS_DB_NAME: wpdb19
+    volumes:
+      - ./wp-data19:/var/www/html
+
+  db19:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb19
+      MYSQL_USER: wpuser19
+      MYSQL_PASSWORD: pass19
+      MYSQL_ROOT_PASSWORD: rootpass19
+    volumes:
+      - ./db-data19:/var/lib/mysql
+
+  wordpress20:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8100:80"
+    environment:
+      WORDPRESS_DB_HOST: db20
+      WORDPRESS_DB_USER: wpuser20
+      WORDPRESS_DB_PASSWORD: pass20
+      WORDPRESS_DB_NAME: wpdb20
+    volumes:
+      - ./wp-data20:/var/www/html
+
+  db20:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdb20
+      MYSQL_USER: wpuser20
+      MYSQL_PASSWORD: pass20
+      MYSQL_ROOT_PASSWORD: rootpass20
+    volumes:
+      - ./db-data20:/var/lib/mysql
