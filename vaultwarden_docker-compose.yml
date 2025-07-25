@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    # Public port 8000 ra bên ngoài máy chủ (để Nginx ở server khác có thể truy cập)
+    # Sử dụng 0.0.0.0 để lắng nghe trên tất cả các interface mạng
+    ports:
+      - "0.0.0.0:8000:8000"
+
+    volumes:
+      - ./data:/data  # Đây là nơi dữ liệu của Vaultwarden được lưu trữ
+
+    environment:
+      # Đảm bảo DOMAIN khớp với tên miền bạn sẽ sử dụng trong Nginx
+      - DOMAIN=https://vault.victorphan.net # THAY ĐỔI CÁI NÀY bằng tên miền thực tế
+      - WEBSOCKET_ENABLED=true # Rất quan trọng cho đồng bộ hóa thời gian thực
+      - SIGNUPS_ALLOWED=true   # Đặt thành false sau khi tạo người dùng đầu tiên
+      - INVITATIONS_ALLOWED=false
+      - LOG_FILE=/data/vaultwarden.log
+      - LOG_LEVEL=info
+      # Admin page (tùy chọn, khuyến nghị tạo xong user đầu tiên thì tắt)
+      - ADMIN_TOKEN=your_very_strong_admin_token # THAY ĐỔI CÁI NÀY bằng token mạnh!
+      # Cài đặt SMTP cho email (reset mật khẩu, mời, v.v.)
+      # - SMTP_HOST=smtp.your-email-provider.com
+      # - SMTP_PORT=587
+      # - SMTP_FROM=bitwarden@yourdomain.com
+      # - SMTP_USERNAME=your-email-username
+      # - SMTP_PASSWORD=your-email-password
+      # - SMTP_SSL=true # Hoặc false nếu dùng STARTTLS

@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  adguardhome:
+    image: adguard/adguardhome:latest
+    container_name: adguardhome
+    restart: always
+    # Khi dùng network_mode: host, không cần định nghĩa 'ports'
+    # Các cổng của AdGuard Home (53, 3000, 853, v.v.)
+    # sẽ tự động được sử dụng trên các cổng tương ứng của máy chủ.
+    volumes:
+      - ./work:/opt/adguardhome/work # Stores logs, query history, statistics
+      - ./conf:/opt/adguardhome/conf # Stores configuration files
+    environment:
+      # This is useful if your host has systemd-resolved listening on 127.0.0.53:53
+      # It tells AdGuard Home to listen on all interfaces directly.
+      - AGH_LISTEN_INTERFACE=0.0.0.0
+    # Kích hoạt network_mode: host
+    network_mode: host
